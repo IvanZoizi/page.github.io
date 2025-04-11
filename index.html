@@ -12,103 +12,114 @@
         }
 
         body {
+            font-family: 'Open Sans', sans-serif;
             color: var(--tg-theme-text-color);
-            background: var(--tg-theme-bg-color);
+            /* background: var(--tg-theme-bg-color); */
+            background-color: black;
         }
 
-        .Main {
-            width: 100%;
-            padding: 25px;
+        .logo {
+            border-radius: 5%;
+            width: 90%;
+        }
+
+        .card {
+            gap: 20px;
+            padding: 10px;
+            border-radius: 5%;
+            margin-top: 15px;
+            background-color: #242424;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .card_news {
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+        }
+
+        .title_card {
+            margin-top: 0;
+            color: #02E59D;
+        }
+
+        .text_card {
+            color: white;
+        }
+
+        .container {
+            width: 95%;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .logo_div {
             text-align: center;
-
+            margin-top: 10px;
         }
 
-        h1 {
-            margin-top: 40px;
-            margin-bottom: 10px;
+        .flex_align_center {
+            align-items: center 
+        }       
+        .image_button {
+            color: white;
+            width: 40px;
         }
-
-        img {
-            width: 70px;
-            margin: 30px auto;
-        }
-
-        .btn {
+        button {
+            outline: none; /* Для синий ободки */
             border: 0;
-            border-radius: 5px;
-            margin-top: 50px;
-            height: 60px;
-            width: 200px;
-            font-style: 20px;
-            font-weight: 500;
-            cursor: pointer;
-            color: var(--tg-theme-button-text-color);
-            background: var(--tg-theme-button-color);
+            background: transparent;
         }
-
-        form {
-            display: none;
+        .button_circle { 
+            display: flex;
             text-align: center;
-        }
-
-        input {
-            outline: none;
-            border-radius: 5px;
-            border: 2px solid #535353;
-            padding: 15px 10px;
-            margin: 10px 0 0;
-            background: var(--tg-theme-section-separator-color);
-            color: var(--tg-theme-text-color);
-            transition: all .2s;
-        }
-
-        input:focus {
-            border-color: var(--tg-theme-secondary-bg-color)
+            justify-content: center;
+            background-color: white;
+            width: 40px;
+            border-radius: 50%;
+            height: 40px;
         }
 
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="Main">
-        <h1>Тестовое приложение</h1>
-        <img src="{{ url_for('static', filename='bot.png') }}" alt="">
-        <p></p>
-        <button class="btn f-btn">Тест отправки данных</button>
+    <div class="container logo_div">
+        <img src="./static/logo.jpg" class="logo" >
     </div>
-    <form class="test-form">
-        <input type="text" placeholder="Введите заголовок" class="title-inp">
-        <input type="text" placeholder="Введите описание" class="desc-inp">
-        <input type="text" placeholder="Введите текст" class="text-inp">
-        <button class="btn s-btn">Отправить</button>
-    </form>
-
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
-
-    <script>
-        let tg = window.Telegram.WebApp;
-
-        let fBtn = document.getElementsByClassName("f-btn")[0]
-        let sBtn = document.getElementsByClassName("s-btn")[0]
-
-        fBtn.addEventListener("click", () => {
-            document.getElementsByClassName("Main")[0].style.display = "none";
-            document.getElementsByClassName("test-form")[0].style.display = "block";
-        });
-
-        sBtn.addEventListener("click", () => {
-            let title = document.getElementsByClassName("title-inp")[0];
-            let description = document.getElementsByClassName("desc-inp")[0];
-            let text = document.getElementsByClassName("text-inp")[0];
-
-
-            let data = {
-                title: title.value,
-                desc: description.value,
-                text: text.value
-            }
-
-            tg.sendData(JSON.stringify(data));
-        });
-    </script>
+    <div class="information">
+        <div class="card container">
+            <div class="card_news">
+                <h3 class="title_card">Кто я такой?</h3>
+                <p class="text_card">Как я пришел к своему делу и мои личные инсайты</p>
+            </div>
+            <div class="button_circle">
+                <button class="toggle-button" onclick="toggleContent()"><img src="./static/button_up-no-bg-preview (carve.photos).png" class="image_button"></button>
+            </div>
+        </div>
+    </div>
+    <div class="information">
+        <div class="card container">
+            <div class="card_news">
+                <h3 class="title_card">Полезные материалы</h3>
+                <p class="text_card">Гайды, тренировочные программы, комплексные упражнения</p>
+            </div>
+            <div class="button_circle">
+                <button class="toggle-button" onclick="toggleContent()"><img src="./static/button_up-no-bg-preview (carve.photos).png" class="image_button"></button>
+            </div>
+        </div>
+    </div>
+    <div class="information">
+        <div class="card container">
+            <div class="card_news">
+                <h3 class="title_card">Кейсы</h3>
+                <p class="text_card">Трансформация без диет, голодания и стресса</p>
+            </div>
+            <div class="button_circle">
+                <button class="toggle-button" onclick="toggleContent()"><img src="./static/button_up-no-bg-preview (carve.photos).png" class="image_button"></button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
