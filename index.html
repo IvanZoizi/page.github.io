@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <style>
         * {
             margin: 0;
@@ -16,6 +17,7 @@
             color: var(--tg-theme-text-color);
             /* background: var(--tg-theme-bg-color); */
             background-color: black;
+            padding-bottom: 70px;
         }
 
         .logo {
@@ -29,6 +31,9 @@
             border-radius: 16px;
             margin-top: 15px;
             background-color: #242424;
+        }
+
+        .flex {
             display: flex;
             flex-direction: row;
         }
@@ -72,6 +77,8 @@
             background: transparent;
         }
         .button_circle { 
+            margin-left: 100px;
+            margin-top: 10px;
             display: flex;
             text-align: center;
             justify-content: center;
@@ -79,6 +86,138 @@
             width: 40px;
             border-radius: 50%;
             height: 40px;
+        }
+
+        li {
+            color: white;
+        }
+
+        .card_info {
+            display: none;
+        }
+
+        .menu-item-content {
+            color: white;
+            font-size: 14px;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .toggle-icon {
+            width: 20px;
+            height: 20px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black"><path d="M7 10l5 5 5-5z"/></svg>');
+            background-repeat: no-repeat;
+            background-position: center;
+            transition: transform 0.3s;
+        }
+
+        .information.active .card_info {
+            display: block;
+        }
+
+        .information.active .fixed-button {
+            margin-top: 100px;
+        }
+
+        .information.active .image_button {
+            transform: rotate(90deg);
+        }
+
+        .menu-item-content.active {
+            display: inline;
+        }
+
+        .toggle-icon.active {
+            color: white;
+        }
+
+
+        .material-symbols-outlined {
+            font-size: 15px;
+            color: #02E59D;
+        }
+
+        .materials-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .material-item {
+            padding: 12px 15px;
+            border-bottom: 1px solid #666;
+            position: relative;
+            padding-left: 25px;
+        }
+        .material-item:last-child {
+            border-bottom: none;
+        }
+        .material-item:before {
+            content: "•";
+            position: absolute;
+            left: 10px;
+            color: #02E59D;
+            font-weight: bold;
+        }
+        .material-title {
+            font-weight: bold;
+            margin-bottom: 3px;
+        }
+        .material-description {
+            font-size: 13px;
+            color: #666;
+            margin-top: 3px;
+        }
+        .accept {
+            background-color: #FFD600;
+            text-decoration: none;
+            height: 50px;
+            width: 90%;
+            justify-content: center;
+            color: black;
+            border-radius: 40px;
+            display: block;
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            /* bottom: 10px; */
+            /* right: 0px; */
+        }
+
+        .fixedbutton {
+            position: fixed;
+            bottom: 0px;
+            /* right: 0px; */
+            width: 90%;
+            height: 100px;
+            font-size: 20px;
+            border-radius: 50%;
+            background-size: cover;
+            background-color: white;
+        }
+
+        .fixed-button {
+            position: fixed;
+            bottom: 10px;
+            width: 90%;
+            left: 5%;
+            right: 5%;
+            background-color: #FFD600;
+            color: black;
+            border-radius: 40px;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            transition: background-color 0.3s;
+        }
+        
+        .fixed-button:hover {
+            background-color: #3a7bc8;
         }
 
     </style>
@@ -90,36 +229,240 @@
     </div>
     <div class="information">
         <div class="card container">
-            <div class="card_news">
-                <h3 class="title_card">Кто я такой?</h3>
-                <p class="text_card">Как я пришел к своему делу и мои личные инсайты</p>
+            <div class="flex container">
+                    <div class="card_news">
+                        <h3 class="title_card">Кто я такой?</h3>
+                        <p class="text_card">Как я пришел к своему делу и мои личные инсайты</p>
+                    </div>
+                    <div class="button_circle">
+                        <img src="./static/button_up-no-bg-preview (carve.photos).png" class="image_button">
+                    </div>
             </div>
-            <div class="button_circle">
-                <button class="toggle-button" onclick="toggleContent()"><img src="./static/button_up-no-bg-preview (carve.photos).png" class="image_button"></button>
+            <div class="card_info">  
+                <ul class="materials-list">
+                    <li class="material-item">
+                        <div class="material-title">ГАЙД <span class="highlight">Повысь свою энергию за 14 дней</span></div>
+                        <div class="material-description">Полный список анализов и витаминов</div>
+                    </li>
+                    
+                    <li class="material-item">
+                        <div class="material-title">Тренировочная программа футбола для <span class="highlight">Мужчин</span></div>
+                    </li>
+                    
+                    <li class="material-item">
+                        <div class="material-title">Комплекс для <span class="highlight">Осанин</span></div>
+                    </li>
+                    
+                    <li class="material-item">
+                        <div class="material-title">Тренировка на <span class="highlight">ПРЕСС</span></div>
+                    </li>
+                    
+                    <li class="material-item">
+                        <div class="material-title">Программа тренировок для <span class="highlight">Девушек</span></div>
+                    </li>
+                    
+                    <li class="material-item">
+                        <div class="material-title">Тренировка на <span class="highlight">ПРЕСС</span> от выпирающего живота на каждое утро</div>
+                    </li>
+                    
+                    <li class="material-item">
+                        <div class="material-title"><span class="highlight">ПРОМТ</span> для ЧатGPT для составления программы</div>
+                    </li>
+                    
+                    <li class="material-item">
+                        <div class="material-title">Полная тренировка на <span class="highlight">пресс</span></div>
+                    </li>
+                    
+                    <li class="material-item">
+                        <div class="material-title">Гайд: <span class="highlight">«4 простых шага к телу мечты»</span></div>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
     <div class="information">
         <div class="card container">
-            <div class="card_news">
-                <h3 class="title_card">Полезные материалы</h3>
-                <p class="text_card">Гайды, тренировочные программы, комплексные упражнения</p>
+            <div class="flex container">
+                    <div class="card_news">
+                        <h3 class="title_card">Полезные материалы</h3>
+                        <p class="text_card">Гайды, тренировочные программы, комплексные упражнения</p>
+                    </div>
+                    <div class="button_circle">
+                        <img src="./static/button_up-no-bg-preview (carve.photos).png" class="image_button">
+                    </div>
             </div>
-            <div class="button_circle">
-                <button class="toggle-button" onclick="toggleContent()"><img src="./static/button_up-no-bg-preview (carve.photos).png" class="image_button"></button>
+            <div class="card_info">  
+                <ul class="materials-list">
+                    <li class="material-item">
+                        <div class="material-title">ГАЙД <span class="highlight">Повысь свою энергию за 14 дней</span></div>
+                        <div class="material-description">Полный список анализов и витаминов</div>
+                    </li>
+                    
+                    <li class="material-item">
+                        <div class="material-title">Тренировочная программа футбола для <span class="highlight">Мужчин</span></div>
+                    </li>
+                    
+                    <li class="material-item">
+                        <div class="material-title">Комплекс для <span class="highlight">Осанин</span></div>
+                    </li>
+                    
+                    <li class="material-item">
+                        <div class="material-title">Тренировка на <span class="highlight">ПРЕСС</span></div>
+                    </li>
+                    
+                    <li class="material-item">
+                        <div class="material-title">Программа тренировок для <span class="highlight">Девушек</span></div>
+                    </li>
+                    
+                    <li class="material-item">
+                        <div class="material-title">Тренировка на <span class="highlight">ПРЕСС</span> от выпирающего живота на каждое утро</div>
+                    </li>
+                    
+                    <li class="material-item">
+                        <div class="material-title"><span class="highlight">ПРОМТ</span> для ЧатGPT для составления программы</div>
+                    </li>
+                    
+                    <li class="material-item">
+                        <div class="material-title">Полная тренировка на <span class="highlight">пресс</span></div>
+                    </li>
+                    
+                    <li class="material-item">
+                        <div class="material-title">Гайд: <span class="highlight">«4 простых шага к телу мечты»</span></div>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
     <div class="information">
         <div class="card container">
-            <div class="card_news">
-                <h3 class="title_card">Кейсы</h3>
-                <p class="text_card">Трансформация без диет, голодания и стресса</p>
+            <div class="flex container">
+                    <div class="card_news">
+                        <h3 class="title_card">Кейсы</h3>
+                        <p class="text_card">Трансформация без диет, голодания и стресса</p>
+                    </div>
+                    <div class="button_circle">
+                        <img src="./static/button_up-no-bg-preview (carve.photos).png" class="image_button">
+                    </div>
             </div>
-            <div class="button_circle">
-                <button class="toggle-button" onclick="toggleContent()"><img src="./static/button_up-no-bg-preview (carve.photos).png" class="image_button"></button>
+            <div class="card_info">  
+                <ul class="materials-list">
+                    <li class="material-item">
+                        <div class="material-title">ГАЙД <span class="highlight">Повысь свою энергию за 14 дней</span></div>
+                        <div class="material-description">Полный список анализов и витаминов</div>
+                    </li>
+                    
+                    <li class="material-item">
+                        <div class="material-title">Тренировочная программа футбола для <span class="highlight">Мужчин</span></div>
+                    </li>
+                    
+                    <li class="material-item">
+                        <div class="material-title">Комплекс для <span class="highlight">Осанин</span></div>
+                    </li>
+                    
+                    <li class="material-item">
+                        <div class="material-title">Тренировка на <span class="highlight">ПРЕСС</span></div>
+                    </li>
+                    
+                    <li class="material-item">
+                        <div class="material-title">Программа тренировок для <span class="highlight">Девушек</span></div>
+                    </li>
+                    
+                    <li class="material-item">
+                        <div class="material-title">Тренировка на <span class="highlight">ПРЕСС</span> от выпирающего живота на каждое утро</div>
+                    </li>
+                    
+                    <li class="material-item">
+                        <div class="material-title"><span class="highlight">ПРОМТ</span> для ЧатGPT для составления программы</div>
+                    </li>
+                    
+                    <li class="material-item">
+                        <div class="material-title">Полная тренировка на <span class="highlight">пресс</span></div>
+                    </li>
+                    
+                    <li class="material-item">
+                        <div class="material-title">Гайд: <span class="highlight">«4 простых шага к телу мечты»</span></div>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
+
+    <div class="information">
+        <div class="card container">
+            <div class="flex container">
+                    <div class="card_news">
+                        <h3 class="title_card">Кейсы</h3>
+                        <p class="text_card">Трансформация без диет, голодания и стресса</p>
+                    </div>
+                    <div class="button_circle">
+                        <img src="./static/button_up-no-bg-preview (carve.photos).png" class="image_button">
+                    </div>
+            </div>
+            <div class="card_info">  
+                <ul class="materials-list">
+                    <li class="material-item">
+                        <div class="material-title">ГАЙД <span class="highlight">Повысь свою энергию за 14 дней</span></div>
+                        <div class="material-description">Полный список анализов и витаминов</div>
+                    </li>
+                    
+                    <li class="material-item">
+                        <div class="material-title">Тренировочная программа футбола для <span class="highlight">Мужчин</span></div>
+                    </li>
+                    
+                    <li class="material-item">
+                        <div class="material-title">Комплекс для <span class="highlight">Осанин</span></div>
+                    </li>
+                    
+                    <li class="material-item">
+                        <div class="material-title">Тренировка на <span class="highlight">ПРЕСС</span></div>
+                    </li>
+                    
+                    <li class="material-item">
+                        <div class="material-title">Программа тренировок для <span class="highlight">Девушек</span></div>
+                    </li>
+                    
+                    <li class="material-item">
+                        <div class="material-title">Тренировка на <span class="highlight">ПРЕСС</span> от выпирающего живота на каждое утро</div>
+                    </li>
+                    
+                    <li class="material-item">
+                        <div class="material-title"><span class="highlight">ПРОМТ</span> для ЧатGPT для составления программы</div>
+                    </li>
+                    
+                    <li class="material-item">
+                        <div class="material-title">Полная тренировка на <span class="highlight">пресс</span></div>
+                    </li>
+                    
+                    <li class="material-item">
+                        <div class="material-title">Гайд: <span class="highlight">«4 простых шага к телу мечты»</span></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- <a class="fixedbutton" href="#header"></a> -->
+    <a href="https://t.me/m/0dq91P11OThi" class="fixed-button">Записаться на диагностику</a>
+    <!-- <div class="accept">
+        <a href="contact.html">Get Started</a>
+    </div> -->
+    <!-- <div class="logo_div">
+        <a class="accept">Записаться на диагностику</a>
+    </div> -->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuItems = document.querySelectorAll('.information');
+            
+            menuItems.forEach(item => {
+                const header = item.querySelector('.card');
+                if (header) {
+                    header.addEventListener('click', function() {
+                        item.classList.toggle('active');
+                    });
+                }
+            });
+        });
+    </script>
+
 </body>
 </html>
