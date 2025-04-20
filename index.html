@@ -20,6 +20,19 @@
             padding-bottom: 70px;
         }
 
+        a {
+            margin: auto;
+            text-decoration: none;
+        }
+
+        a:link {
+            color: white;
+        }
+
+        a:visited {
+            color: white;
+        }
+
         .logo {
             border-radius: 5%;
             width: 90%;
@@ -292,43 +305,7 @@
                     </div>
             </div>
             <div class="card_info">  
-                <ul class="materials-list">
-                    <li class="material-item">
-                        <div class="material-title">ГАЙД <span class="highlight">Повысь свою энергию за 14 дней</span></div>
-                        <div class="material-description">Полный список анализов и витаминов</div>
-                    </li>
-                    
-                    <li class="material-item">
-                        <div class="material-title">Тренировочная программа футбола для <span class="highlight">Мужчин</span></div>
-                    </li>
-                    
-                    <li class="material-item">
-                        <div class="material-title">Комплекс для <span class="highlight">Осанин</span></div>
-                    </li>
-                    
-                    <li class="material-item">
-                        <div class="material-title">Тренировка на <span class="highlight">ПРЕСС</span></div>
-                    </li>
-                    
-                    <li class="material-item">
-                        <div class="material-title">Программа тренировок для <span class="highlight">Девушек</span></div>
-                    </li>
-                    
-                    <li class="material-item">
-                        <div class="material-title">Тренировка на <span class="highlight">ПРЕСС</span> от выпирающего живота на каждое утро</div>
-                    </li>
-                    
-                    <li class="material-item">
-                        <div class="material-title"><span class="highlight">ПРОМТ</span> для ЧатGPT для составления программы</div>
-                    </li>
-                    
-                    <li class="material-item">
-                        <div class="material-title">Полная тренировка на <span class="highlight">пресс</span></div>
-                    </li>
-                    
-                    <li class="material-item">
-                        <div class="material-title">Гайд: <span class="highlight">«4 простых шага к телу мечты»</span></div>
-                    </li>
+                <ul class="materials-list guides">
                 </ul>
             </div>
         </div>
@@ -450,6 +427,29 @@
     </div> -->
 
     <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const dataParam = urlParams.get('data'); // "item1,item2,item3"
+
+        if (dataParam) {
+            const imageContainer = document.querySelector('.guides');
+            const matrix = dataParam.split(',').map(row => row.split('-'));
+            matrix.forEach(row => {
+                const div = document.createElement('div');
+                const a = document.createElement('a');
+                a.href = row[1];
+                a.textContent = row[0];
+
+                div.appendChild(a);
+
+                const li = document.createElement('li');
+                li.appendChild(div);
+                li.className = "material-item";
+                imageContainer.appendChild(li);
+    
+            });
+
+        }
+
         document.addEventListener('DOMContentLoaded', function() {
             const menuItems = document.querySelectorAll('.information');
             
