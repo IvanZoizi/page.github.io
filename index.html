@@ -638,11 +638,13 @@
         bottomSheet.classList.remove('active');
         sheetContent.style.transform = 'translateY(0)';
         document.body.style.overflow = '';
-        
+        sheetContent.style.transform = 'translateY(100%)'
         // Сброс анимации
         // setTimeout(() => {
         //     sheetContent.style.transform = 'translateY(100%)';
         // }, 1);
+
+        sheetContent.style.transform = '';
     }
 </script>
 
