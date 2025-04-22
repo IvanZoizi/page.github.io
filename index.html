@@ -155,7 +155,7 @@
         }
 
         .information.active .fixed-button {
-            margin-top: 100px;
+            margin-top: 1000px;
         }
 
         .information.active .image_button {
@@ -253,9 +253,24 @@
             z-index: 1000;
             transition: background-color 0.3s;
         }
-        
-        .fixed-button:hover {
-            background-color: #3a7bc8;
+
+        .get_button {
+            position: fixed;
+            width: 90%;
+            left: 5%;
+            right: 5%;
+            margin-top: 10px;
+            background-color: #FFD600;
+            color: black;
+            border-radius: 40px;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            transition: background-color 0.3s;
         }
 
         .green_title {
@@ -264,6 +279,86 @@
 
         .black {
             background-color: black;
+        }
+
+        .bottom-sheet {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
+            z-index: 1000;
+        }
+        
+        .sheet-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .sheet-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #242424;
+            border-radius: 16px 16px 0 0;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+            padding-bottom: env(safe-area-inset-bottom);
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        
+        .bottom-sheet.active {
+            display: block;
+        }
+        
+        .bottom-sheet.active .sheet-overlay {
+            opacity: 1;
+        }
+        
+        .bottom-sheet.active .sheet-content {
+            transform: translateY(0);
+        }
+        
+        .handle-bar {
+            width: 40px;
+            height: 4px;
+            background-color: #ddd;
+            border-radius: 2px;
+            margin: 12px auto;
+            cursor: pointer;
+        }
+        
+        .sheet-body {
+            padding: 0 20px 20px;
+        }
+        
+        .sheet-body h3 {
+            margin-bottom: 16px;
+            color: #333;
+        }
+        
+        .sheet-body ul {
+            list-style: none;
+        }
+        
+        .sheet-body li {
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+            color: #333;
+        }
+        
+        .sheet-body li:last-child {
+            border-bottom: none;
         }
 
     </style>
@@ -303,7 +398,7 @@
                             <br><br>
                             Сейчас спорт и фитнес — это не просто хобби, а часть моей жизни. Это то, что я изучаю, что я практикую, и что я хочу передать другим. Я убедился, что спорт — это не только сила тела, но и сила духа, и именно этим я хочу делиться с людьми.</div>
                             <br><br>
-                            Хочешь узнать больше? <a href="https://t.me/kuznicatela7/394">Переходи по ссылке</a>
+                            Хочешь узнать больше? <a href="https://t.me/kuznicatela7/394">Переходи по ссылке</a></div>
                     </li>
                 </ul>
             </div>
@@ -395,8 +490,47 @@
             </div>
         </div>
     </div>
+    <button class="fixed-button open-btn">Открыть меню</button>
+
+    <div class="bottom-sheet">
+        <div class="sheet-overlay"></div>
+        <div class="sheet-content">
+            <div class="handle-bar"></div>
+            <div class="sheet-body">
+                <div class="container logo_div">
+                    <img src="./static/logo.jpg" class="logo" >
+                </div>
+                <div class="container">
+                    <div class="text_card">📋 Твой личный разбор: первый шаг к телу, энергии и силе, которые ты хочешь 
+                        <br><br>
+                        Большинство людей годами ходят по кругу: тренируются без системы, пробуют диеты, но не видят результата. Всё потому, что нет чёткого понимания, что именно работает для тебя. 
+                        <br><br>
+                        Мы это исправим. 
+                        <br><br>
+                        Наш эксперт проведёт персональный разбор, который покажет: 
+                        <br><br>
+                        ✅ Где скрываются главные ошибки в твоём питании и тренировках, из-за которых тело не меняется. <br>
+                        ✅ Какие внутренние процессы тормозят прогресс: гормоны, обмен веществ, дефициты по витаминам. <br>
+                        ✅ Какой путь даст тебе максимальный результат в твоём ритме жизни – без срывов, перегруза и усталости. <br>
+                        <br><br>
+                        Ты получишь чёткий план действий, который даст ответы на главные вопросы: что есть, как тренироваться, как восстановить энергию и добиться формы мечты без догадок и потерь времени. 
+                        <br><br>
+                        🔥 Это не просто консультация — это твой индивидуальный маршрут к результату. 
+                        <br><br>
+                        Готов получить ясность и стратегию для мощного тела и энергии? Жми кнопку ниже 👇</div>
+                        <a href="https://t.me/m/0dq91P11OThi" class="get_button">Записаться на диагностику</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="information fixed-button">
+        <div class="card container">
+            <h3 class="title_card" style="color: white;">Записаться на диагностику</h3>
+            <!-- <a href="https://t.me/m/0dq91P11OThi" class="">Записаться на диагностику</a> -->
+        <!-- </div>
+    </div> --> -->
     <!-- <a class="fixedbutton" href="#header"></a> -->
-    <a href="https://t.me/m/0dq91P11OThi" class="fixed-button">Записаться на диагностику</a>
+    <!-- <a href="https://t.me/m/0dq91P11OThi" class="fixed-button">Записаться на диагностику</a> -->
     <!-- <div class="accept">
         <a href="contact.html">Get Started</a>
     </div> -->
@@ -442,6 +576,75 @@
             });
         });
     </script>
+
+<script>
+    const openBtn = document.querySelector('.open-btn');
+    const bottomSheet = document.querySelector('.bottom-sheet');
+    const sheetContent = document.querySelector('.sheet-content');
+    const overlay = document.querySelector('.sheet-overlay');
+    
+    let startY = 0;
+    let currentY = 0;
+    let isDragging = false;
+    
+    // Открытие меню
+    openBtn.addEventListener('click', () => {
+        bottomSheet.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    });
+    
+    // Закрытие по клику на оверлей
+    overlay.addEventListener('click', () => {
+        closeSheet();
+    });
+    
+    // Touch события для свайпа
+    sheetContent.addEventListener('touchstart', (e) => {
+        startY = e.touches[0].clientY;
+        currentY = startY;
+        isDragging = true;
+    });
+    
+    sheetContent.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        
+        const y = e.touches[0].clientY;
+        const diff = y - currentY;
+        
+        if (diff > 0) { // Движение вниз
+            sheetContent.style.transform = `translateY(${diff}px)`;
+        }
+        
+        currentY = y;
+    });
+    
+    sheetContent.addEventListener('touchend', (e) => {
+        if (!isDragging) return;
+        isDragging = false;
+        
+        const endY = e.changedTouches[0].clientY;
+        const diff = endY - startY;
+        
+        // Если свайп вниз на достаточное расстояние - закрываем
+        if (diff > 50) {
+            closeSheet();
+        } else {
+            sheetContent.style.transform = 'translateY(0)';
+        }
+    });
+    
+    // Функция закрытия
+    function closeSheet() {
+        bottomSheet.classList.remove('active');
+        sheetContent.style.transform = 'translateY(0)';
+        document.body.style.overflow = '';
+        
+        // Сброс анимации
+        // setTimeout(() => {
+        //     sheetContent.style.transform = 'translateY(100%)';
+        // }, 1);
+    }
+</script>
 
 </body>
 </html>
