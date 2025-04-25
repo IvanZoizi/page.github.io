@@ -4,8 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=link" />
     <style>
+        @counter-style marker-font {
+        	system: cyclic;
+        	symbols: "link";
+        	suffix: " ";
+        }
         * {
             margin: 0;
             padding: 0;
@@ -63,7 +68,7 @@
         .card_news {
             display: flex;
             flex-direction: column;
-            width: 80%;
+            width: 90%;
         }
 
         .title_card {
@@ -103,15 +108,20 @@
             background: transparent;
         }
         .button_circle { 
-            margin-left: 100px;
+            margin-left: 10px;
             margin-top: 10px;
             display: flex;
             text-align: center;
             justify-content: center;
+            background: linear-gradient(#0000, rgb(0 0 0/40%)) top/100% 800%;
             background-color: white;
             width: 40px;
             border-radius: 50%;
             height: 40px;
+        }
+
+        .button_circle:hover {
+            background-position: bottom;
         }
 
         .button_in {
@@ -127,6 +137,7 @@
         }
 
         li {
+            /* list-style-image: url(http://upload.wikimedia.org/wikipedia/commons/1/19/Icons-mini-icon_attachment.gif); */
             color: white;
         }
 
@@ -190,12 +201,18 @@
         .material-item:last-child {
             border-bottom: none;
         }
-        .material-item:before {
-            content: "•";
+        .material-item::before {
+            content: "";
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            /* background-color: black; */
+            background-image: url(./static/link.svg);
+            background-size: contain;
             position: absolute;
-            left: 10px;
-            color: #02E59D;
-            font-weight: bold;
+            margin-right: 10px;
+            left: 5px;
+            top: 10px;
         }
         .material-title {
             font-weight: bold;
@@ -369,38 +386,40 @@
     <div class="container logo_div">
         <img src="./static/logo.jpg" class="logo" >
     </div>
+    <div class="information" onclick="window.location.href='https://lcvr.net/s/sF8TZ5'">
+        <div class="card_green container">
+            <div class="flex container">
+                    <div class="card_news" style="width: 100%;">
+                        <h3 class="title_card"><a class="green_title" href="https://lcvr.net/s/sF8TZ5" style="color: black;">Закрытый канал «СОСТОЯНИЕ»</a></h3>
+                        <p class="green_text_card">Ты не останешься один.</p>
+                    </div>
+                    <!-- <div class="button_circle">
+                        <img src="./static/button_up-no-bg-preview (carve.photos).png" class="image_button black">
+                    </div> -->
+            </div>
+            <div class="card_info">  
+                <ul class="materials-list guides">
+                    <li class="material-item"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
     <div class="information">
         <div class="card container">
             <div class="flex container">
                     <div class="card_news">
-                        <h3 class="title_card">Кто я такой?</h3>
-                        <p class="text_card">Как я пришел к своему делу и мои личные инсайты</p>
+                        <h3 class="title_card">Сотрудничество</h3>
+                        <p class="text_card">Комплексная коррекция фигуры и чек-ап организма</p>
                     </div>
                     <div class="button_circle">
                         <img src="./static/button_up-no-bg-preview (carve.photos).png" class="image_button">
                     </div>
             </div>
             <div class="card_info">  
-                <ul class="materials-list about">
-                    <li class="material-item">
-                        <div class="material-title">От сироты до спортсмена: как я пришёл к своему делу<br><br>
-
-                            Серия из 5 постов о бо мне<br><br>
-                            
-                            Когда я был маленьким, одним из самых тяжёлых моментов было остаться без родителей. <br><br>
-                            
-                            Я видел, как другие дети растут с мамой и папой, и это сильно меня задело. Но также я знал, что мои родители жили совсем по-другому: постоянное пьянство, наркотики, и в какой-то момент я был даже рад, что меня забрала бабушка. Это была совсем другая жизнь — чистое воспитание, любовь и забота. И именно благодаря бабушке я смог вырасти с нормальными ценностями.
-                            <br><br>
-                            Когда я поступил в кадетский корпус, моя жизнь кардинально изменилась. Это место научило меня дисциплине, важности распорядка дня и ответственности. 
-                            <br><br>
-                            Я выбрал путь, который отличался от того, что меня окружало раньше — улицы, где было всё: наркотики, пьянки, гулянки. Кадетский корпус стал для меня местом, где я начал ставить перед собой цели, учил себя мыслить и развиваться. Это были не просто учёба и тренировки — это была полная переоценка себя и своих возможностей. Я начал читать книги, саморазвиваться и формировать свою жизненную позицию.
-                            <br><br>
-                            Спорт же с самого детства стал моим основным источником энергии. Родители отдали меня на вольную борьбу, самбо и дзюдо, и я почувствовал, что когда я занимаюсь спортом, я становлюсь лучше. Это не было осознанным стремлением к хорошей фигуре — я просто любил соревнования и всегда хотел быть первым. Я не замечал, как меняется моё тело, но окружающие стали замечать, что я становлюсь сильнее, увереннее, плечи растут. И всё это благодаря спорту.
-                            <br><br>
-                            Сейчас спорт и фитнес — это не просто хобби, а часть моей жизни. Это то, что я изучаю, что я практикую, и что я хочу передать другим. Я убедился, что спорт — это не только сила тела, но и сила духа, и именно этим я хочу делиться с людьми.</div>
-                            <br><br>
-                            Хочешь узнать больше? <a href="https://t.me/kuznicatela7/394">Переходи по ссылке</a></div>
-                    </li>
+                <ul class="materials-list guides">
+                    <li class="material-item"><a href="https://t.me/c/1971866588/110">Комплексная коррекция фигуры</a></li>
+                    <li class="material-item"><a href="https://t.me/c/1971866588/225">Чек-ап организма -70%</a></li>
+                    <li class="material-item"><a href="https://t.me/kuznicatela7/414">РЕЗУЛЬТАТЫ клиентов</a></li>
                 </ul>
             </div>
         </div>
@@ -456,37 +475,35 @@
     <div class="information">
         <div class="card container">
             <div class="flex container">
-                    <div class="card_news">
-                        <h3 class="title_card">Сотрудничество</h3>
-                        <p class="text_card">Комплексная коррекция фигуры и чек-ап организма</p>
+                    <div class="card_news" style="width: 100%;">
+                        <h3 class="title_card">Кто я такой?</h3>
+                        <p class="text_card">Как я пришел к своему делу и мои личные инсайты</p>
                     </div>
                     <div class="button_circle">
                         <img src="./static/button_up-no-bg-preview (carve.photos).png" class="image_button">
                     </div>
             </div>
             <div class="card_info">  
-                <ul class="materials-list guides">
-                    <li class="material-item"><a href="https://t.me/c/1971866588/110">Комплексная коррекция фигуры</a></li>
-                    <li class="material-item"><a href="https://t.me/c/1971866588/225">Чек-ап организма -70%</a></li>
-                    <li class="material-item"><a href="https://t.me/kuznicatela7/414">РЕЗУЛЬТАТЫ клиентов</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="information" onclick="window.location.href='https://lcvr.net/s/sF8TZ5'">
-        <div class="card_green container">
-            <div class="flex container">
-                    <div class="card_news" style="width: 90%;">
-                        <h3 class="title_card"><a class="green_title" href="https://lcvr.net/s/sF8TZ5" style="color: black;">Закрытый клуб «СОСТОЯНИЕ»</a></h3>
-                        <p class="green_text_card">Ты не останешься один.</p>
-                    </div>
-                    <!-- <div class="button_circle">
-                        <img src="./static/button_up-no-bg-preview (carve.photos).png" class="image_button black">
-                    </div> -->
-            </div>
-            <div class="card_info">  
-                <ul class="materials-list guides">
-                    <li class="material-item"></li>
+                <ul class="materials-list about">
+                    <li class="material-item">
+                        <div class="material-title">От сироты до спортсмена: как я пришёл к своему делу<br><br>
+
+                            Серия из 5 постов о бо мне<br><br>
+                            
+                            Когда я был маленьким, одним из самых тяжёлых моментов было остаться без родителей. <br><br>
+                            
+                            Я видел, как другие дети растут с мамой и папой, и это сильно меня задело. Но также я знал, что мои родители жили совсем по-другому: постоянное пьянство, наркотики, и в какой-то момент я был даже рад, что меня забрала бабушка. Это была совсем другая жизнь — чистое воспитание, любовь и забота. И именно благодаря бабушке я смог вырасти с нормальными ценностями.
+                            <br><br>
+                            Когда я поступил в кадетский корпус, моя жизнь кардинально изменилась. Это место научило меня дисциплине, важности распорядка дня и ответственности. 
+                            <br><br>
+                            Я выбрал путь, который отличался от того, что меня окружало раньше — улицы, где было всё: наркотики, пьянки, гулянки. Кадетский корпус стал для меня местом, где я начал ставить перед собой цели, учил себя мыслить и развиваться. Это были не просто учёба и тренировки — это была полная переоценка себя и своих возможностей. Я начал читать книги, саморазвиваться и формировать свою жизненную позицию.
+                            <br><br>
+                            Спорт же с самого детства стал моим основным источником энергии. Родители отдали меня на вольную борьбу, самбо и дзюдо, и я почувствовал, что когда я занимаюсь спортом, я становлюсь лучше. Это не было осознанным стремлением к хорошей фигуре — я просто любил соревнования и всегда хотел быть первым. Я не замечал, как меняется моё тело, но окружающие стали замечать, что я становлюсь сильнее, увереннее, плечи растут. И всё это благодаря спорту.
+                            <br><br>
+                            Сейчас спорт и фитнес — это не просто хобби, а часть моей жизни. Это то, что я изучаю, что я практикую, и что я хочу передать другим. Я убедился, что спорт — это не только сила тела, но и сила духа, и именно этим я хочу делиться с людьми.</div>
+                            <br><br>
+                            Хочешь узнать больше? <a href="https://t.me/kuznicatela7/394">Переходи по ссылке</a></div>
+                    </li>
                 </ul>
             </div>
         </div>
