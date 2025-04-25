@@ -398,7 +398,7 @@
                     </div> -->
             </div>
             <div class="card_info">  
-                <ul class="materials-list guides">
+                <ul class="materials-list">
                     <li class="material-item"></li>
                 </ul>
             </div>
@@ -416,7 +416,7 @@
                     </div>
             </div>
             <div class="card_info">  
-                <ul class="materials-list guides">
+                <ul class="materials-list">
                     <li class="material-item"><a href="https://t.me/c/1971866588/110">Комплексная коррекция фигуры</a></li>
                     <li class="material-item"><a href="https://t.me/c/1971866588/225">Чек-ап организма -70%</a></li>
                     <li class="material-item"><a href="https://t.me/kuznicatela7/414">РЕЗУЛЬТАТЫ клиентов</a></li>
@@ -536,7 +536,7 @@
                         🔥 Это не просто консультация — это твой индивидуальный маршрут к результату. 
                         <br><br>
                         Готов получить ясность и стратегию для мощного тела и энергии? Жми кнопку ниже 👇</div>
-                        <a href="https://t.me/m/0dq91P11OThi" class="get_button">Записаться на диагностику</a>
+                        <a href="https://t.me/m/0dq91P11OThi" class="get_button" style="color: black;">Записаться на диагностику</a>
                 </div>
             </div>
         </div>
@@ -559,7 +559,7 @@
     <script>
         const urlParams = new URLSearchParams(window.location.search);
         const dataParam = urlParams.get('data'); // "item1,item2,item3"
-
+        console.log(dataParam);
         if (dataParam) {
             const imageContainer = document.querySelector('.guides');
             const matrix = dataParam.split(',').map(row => row.split('-'));
